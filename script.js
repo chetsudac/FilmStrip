@@ -14,3 +14,4 @@ toggles.forEach((toggle, index) => {
         })
     })
 })
+
