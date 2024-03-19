@@ -39,16 +39,38 @@ overflow: hidden;
   letter-spacing: 5px;
 }
 .item-b {
-  margin-top: 25px;
   grid-area: sidebar;
   text-align: justify;
-  padding: 20px;
+  padding: 25px;
   font-size: 16px;
+  border-right: 1px solid black;
+  overflow-y: scroll;
 }
-.ellie {
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.item-b::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.item-b {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+.ellie-L {
   font-style: oblique;
-  text-align: center;
-  margin: 60px;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align:left;
+  margin: 50px;
+}
+
+.ellie-R {
+  font-style: oblique;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align:right;
+  margin: 50px;
 }
 #ellie {
   font-style: oblique;
@@ -62,6 +84,7 @@ overflow: hidden;
   padding-left: 75vh;
   display:inline-flex;
   position: relative;
+  border-top: 1px solid black;
 }
 
 audio {
