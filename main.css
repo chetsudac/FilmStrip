@@ -27,18 +27,7 @@ scrollbar-width: none;  /* Firefox */
 #ellie {
   font-style: oblique;
 }
-.item-c {
-  grid-area: main;
-}
 
-.grid-container {  
- width: 100%;
- display: grid;
- gap: 2rem;
- grid-template-columns: repeat(3, 1fr);
- flex-shrink: 0;
- padding-bottom: 50px;
-}
 .item-c {
   overflow-y: scroll;
   padding: 25px;
@@ -55,30 +44,83 @@ scrollbar-width: none;  /* Firefox */
 scrollbar-width: none;  /* Firefox */
 }
 
-.desktop-image,
-.tablet-video,
-.mobile-image--top,
-.mobile-image--bottom,
-.desktop-text, 
-.tablet-text, 
-.mobile-text,
-.text-container {
-    display: none;
+@media screen and (max-width: 499px){
+  .container {
+    display:block;
+    border-top: 1px solid black;
+  }
+  .item-c {
+    padding-top: 50px;
+    display:flex;
+  }
+  .item-d {
+    display:block;
+    position: relative;
+    border-top: 1px solid black;
+  }
+  
+  audio {
+    padding: 15px;
+  }
+  .item-a {
+    text-align: center;
+    padding: 3px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    border-top: none;
+    padding-bottom:10px;
+  }
+  .title{
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 30px;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+  }
+  .item-b {
+    text-align: justify;
+    padding: 10px;
+    font-size: 18px;
+  }
+  a{
+    text-decoration: underline 1.5px solid black;
+    color: black;
+    font-style: normal;
+  }
+  .info {
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: solid black 1px;
+  }
+  .ellie-L {
+    font-style: oblique;
+    font-size: 52px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:left;
+  }
+  
+  .ellie-R {
+    font-style: oblique;
+    font-size: 52px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:right;
+    margin-bottom: 10px;
   }
 
-@media screen and (max-width: 499px){
-.mobile-image--top,
-.mobile-image--bottom {
-    display: block;
-  }
-  .flex-container {
-    flex-direction:column;
-  }
-  .mobile-text {
-    display: block;
-  }
-  .text-container {
-    display: block;
+  .grid-item img{
+    padding: 15px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
   }
 }
 
@@ -101,7 +143,6 @@ scrollbar-width: none;  /* Firefox */
   }
   .item-a {
     text-align: center;
-    font-style: oblique;
     padding: 20px;
     border-bottom: 1px solid black;
     font-size: 15px;
@@ -117,6 +158,7 @@ scrollbar-width: none;  /* Firefox */
     line-height: 50px;
     font-size: 40px;
     padding-top: 20px;
+    font-weight: bold;
   }
   .item-b {
     text-align: justify;
@@ -162,6 +204,23 @@ scrollbar-width: none;  /* Firefox */
 }
 
 @media screen and (min-width: 950px) {
+  .item-c {
+    grid-area: main;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+  
+  .grid-container {  
+   width: 100%;
+   display: grid;
+   gap: 2rem;
+   grid-template-columns: repeat(3, 1fr);
+   flex-shrink: 0;
+   padding-bottom: 50px;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
