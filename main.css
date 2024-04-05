@@ -13,40 +13,6 @@ width: 100vw;
 overflow: hidden;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 15vh 80vh 5vh;
-  grid-template-areas: 
-  "header header header header header"
-  "sidebar sidebar main main main"
-  "footer footer footer footer footer";
-
-}
-.item-a {
-  grid-area: header;
-  text-align: right;
-  font-style: oblique;
-  padding: 20px;
-  border-bottom: 1px solid black;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-.title{
-  text-align: left;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-.item-b {
-  grid-area: sidebar;
-  text-align: justify;
-  padding: 25px;
-  font-size: 16px;
-  border-right: 1px solid black;
-  overflow-y: scroll;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .item-b::-webkit-scrollbar {
   display: none;
@@ -57,38 +23,12 @@ overflow: hidden;
 -ms-overflow-style: none;  /* IE and Edge */
 scrollbar-width: none;  /* Firefox */
 }
-.ellie-L {
-  font-style: oblique;
-  font-size: 22px;
-  font-family: 'Times New Roman', Times, serif;
-  text-align:left;
-  margin: 50px;
-}
 
-.ellie-R {
-  font-style: oblique;
-  font-size: 22px;
-  font-family: 'Times New Roman', Times, serif;
-  text-align:right;
-  margin: 50px;
-}
 #ellie {
   font-style: oblique;
 }
 .item-c {
   grid-area: main;
-  margin-top: 25px;
-}
-.item-d {
-  grid-area: footer;
-  padding-left: 75vh;
-  display:inline-flex;
-  position: relative;
-  border-top: 1px solid black;
-}
-
-audio {
-  padding: 15px;
 }
 
 .grid-container {  
@@ -115,39 +55,214 @@ audio {
 scrollbar-width: none;  /* Firefox */
 }
 
-.grid-item {
-  grid-column: span 1;
-  height: 160px;
-  position:relative;
+.desktop-image,
+.tablet-video,
+.mobile-image--top,
+.mobile-image--bottom,
+.desktop-text, 
+.tablet-text, 
+.mobile-text,
+.text-container {
+    display: none;
+  }
+
+@media screen and (max-width: 499px){
+.mobile-image--top,
+.mobile-image--bottom {
+    display: block;
+  }
+  .flex-container {
+    flex-direction:column;
+  }
+  .mobile-text {
+    display: block;
+  }
+  .text-container {
+    display: block;
+  }
 }
 
-.grid-item img{
-  padding: 15px;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  transform: scale(1);
-  transition: transform .8s ease;
-  opacity: 0.7;
+@media screen and (min-width: 500px) and (max-width: 949px){
+  .container {
+    display: block;
+    border-top: 1px solid black;
+  }
+  .item-c {
+    padding-top: 50px;
+  }
+  .item-d {
+    display:block;
+    position: relative;
+    border-top: 1px solid black;
+  }
+  
+  audio {
+    padding: 15px;
+  }
+  .item-a {
+    text-align: center;
+    font-style: oblique;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 20px;
+    border-top: none;
+  }
+  .title{
+    text-align: center;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 50px;
+    font-size: 40px;
+    padding-top: 20px;
+  }
+  .item-b {
+    text-align: justify;
+    padding: 50px;
+    font-size: 20px;
+  }
+  a{
+    text-decoration: underline 1.5px solid black;
+    color: black;
+    font-style: normal;
+  }
+  .info {
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: solid black 1px;
+  }
+  .ellie-L {
+    font-style: oblique;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:center;
+    margin: 50px;
+  }
+  
+  .ellie-R {
+    font-style: oblique;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:right;
+    margin: 50px;
+  }
+
+  .grid-item img{
+    padding: 15px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
 }
 
-.grid-item:hover img{
- transform: scale(1.2);
- opacity: 1;
-}
+@media screen and (min-width: 950px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 15vh 80vh 5vh;
+    grid-template-areas: 
+    "header header header header header"
+    "sidebar sidebar main main main"
+    "footer footer footer footer footer";
+  }
+  .item-b {
+    padding-top: 50px;
+    border-right: 1px solid black;
+  }
+  .item-d {
+    grid-area: footer;
+    padding-left: 75vh;
+    display:inline-flex;
+    position: relative;
+    border-top: 1px solid black;
+  }
+  
+  audio {
+    padding: 15px;
+  }
 
-a{
-  text-decoration: none;
-  color: black;
-  font-style: normal;
-}
-
-a:hover{
-  text-decoration: underline 1px solid black;
-  font-style: italic;
-}
-
-.info {
-  font-size: 16px;
-  padding: 10px;
+  .item-a {
+    grid-area: header;
+    text-align: right;
+    font-style: oblique;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .title{
+    text-align: left;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  .item-b {
+    grid-area: sidebar;
+    text-align: justify;
+    padding: 25px;
+    font-size: 16px;
+    overflow-y: scroll;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    font-style: normal;
+  }
+  
+  a:hover{
+    text-decoration: underline 1px solid black;
+    font-style: italic;
+  }
+  .info {
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .ellie-L {
+    font-style: oblique;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:left;
+    margin: 50px;
+  }
+  
+  .ellie-R {
+    font-style: oblique;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:right;
+    margin: 50px;
+  }
+  .grid-item {
+    grid-column: span 1;
+    height: 160px;
+    position:relative;
+  }
+  
+  .grid-item img{
+    padding: 15px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    transform: scale(1);
+    transition: transform .8s ease;
+    opacity: 0.7;
+  }
+  
+  .grid-item:hover img{
+   transform: scale(1.2);
+   opacity: 1;
+  }
+  
+  .info {
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: solid black 1px;
+  }
 }
